@@ -3,17 +3,17 @@ import 'package:animox/page/_favoriler.dart';
 import 'package:animox/page/_hesabim.dart';
 
 class Anasayfa extends StatefulWidget {
-  const Anasayfa({Key? key}) : super(key: key);
+  Anasayfa({Key? key}) : super(key: key);
 
   @override
   _AnasayfaState createState() => _AnasayfaState();
 }
 
 class _AnasayfaState extends State<Anasayfa> {
-  final PageController _pageControl = PageController();
-  final List<Widget> _sayfalar = [
-    const Favoriler(),
-    const Hesabim(),
+  PageController _pageControl = PageController();
+  List<Widget> _sayfalar = [
+    Favoriler(),
+    Hesabim(),
   ];
 
   void _onPageChanged(int indexOfPages) {}
@@ -24,7 +24,6 @@ class _AnasayfaState extends State<Anasayfa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Homepage')),
       body: PageView(
         controller: _pageControl,
         children: _sayfalar,
@@ -37,11 +36,15 @@ class _AnasayfaState extends State<Anasayfa> {
         items: [
           const BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Anasayfa',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favorite',
+            label: 'Favoriler',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Hesabım',
           )
         ],
       ),
