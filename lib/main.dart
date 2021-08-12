@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:animox/_colors.dart';
 import 'package:animox/ui/_anasayfa.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
